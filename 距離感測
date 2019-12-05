@@ -1,0 +1,15 @@
+#include <Ultrasonic.h>
+
+Ultrasonic ultrasonic_2_3(2, 3);
+
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  Serial.print("感測距離:");
+  Serial.println(ultrasonic_2_3.convert(ultrasonic_2_3.timing(), Ultrasonic::CM));
+  delay(1000);
+}
