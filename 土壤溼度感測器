@@ -1,0 +1,16 @@
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(3, INPUT);
+}
+void loop()
+{
+  Serial.print("土壤濕度讀數：");
+  Serial.print(analogRead(14));
+  if (digitalRead(3) == true) {
+    Serial.println(" 過乾");
+  } else {
+    Serial.println(" 正常");
+  }
+  delay(1000);
+}
